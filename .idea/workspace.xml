@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b57b68f-b52c-4ba1-a3b2-2dfe8bb03757" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-142169279">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="2" />
+          <entry key="project.opened" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="JAVA/" value="1" />
+          <entry key="README" value="1" />
+          <entry key="class" value="16" />
+          <entry key="java" value="264" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="16" />
+          <entry key="JAVA" value="264" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="UML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="class" value="2" />
+          <entry key="dummy" value="12" />
+          <entry key="java" value="69547" />
+          <entry key="txt" value="1035" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CLASS" value="2" />
+          <entry key="JAVA" value="69547" />
+          <entry key="PLAIN_TEXT" value="1047" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Portal2D" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Portal2D.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2163">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Level.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Wall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+              <folding>
+                <element signature="method#Wall#1;class#Wall#0" />
+                <element signature="method#roundProjectileToEdge#0;class#Wall#0" />
+                <element signature="method#hasPortalRoom#0;class#Wall#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AbstractPhysicsObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cube.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Singleton" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fill</find>
+      <find>levelButtons[i]</find>
+      <find>loadImage</find>
+      <find>moveLeft</find>
+      <find>movin</find>
+      <find>movingLeft</find>
+      <find>movePlayer</find>
+      <find>projectile.speed</find>
+      <find>switch</find>
+      <find>findportalori</find>
+      <find>touchingObj</find>
+      <find>teleport</find>
+      <find>swit</find>
+      <find>(int)</find>
+      <find>FRICT</find>
+      <find>(float)</find>
+      <find>player</find>
+      <find>help</find>
+      <find>canmak</find>
+      <find>Portal XY</find>
+      <find>touchingobj</find>
+      <find>createPortal</find>
+      <find>friction</find>
+      <find>jump</find>
+      <find>falling</find>
+      <find>grounded</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/BlueProjectile.java" />
+        <option value="$PROJECT_DIR$/src/BluePortal.java" />
+        <option value="$PROJECT_DIR$/src/OrangePortal.java" />
+        <option value="$PROJECT_DIR$/src/OrangeProjectile.java" />
+        <option value="$PROJECT_DIR$/src/AbstractProjectile.java" />
+        <option value="$PROJECT_DIR$/src/AbstractButton.java" />
+        <option value="$PROJECT_DIR$/src/AbstractPortal.java" />
+        <option value="$PROJECT_DIR$/src/DummyWall.java" />
+        <option value="$PROJECT_DIR$/src/ImageCatalog.java" />
+        <option value="$PROJECT_DIR$/src/Direction.java" />
+        <option value="$PROJECT_DIR$/src/AbstractCollisionObj.java" />
+        <option value="$PROJECT_DIR$/src/AbstractPortalObj.java" />
+        <option value="$PROJECT_DIR$/src/PortalColor.java" />
+        <option value="$PROJECT_DIR$/src/PortalOrientation.java" />
+        <option value="$PROJECT_DIR$/src/WallType.java" />
+        <option value="$PROJECT_DIR$/src/FloorButton.java" />
+        <option value="$PROJECT_DIR$/src/PedestalButton.java" />
+        <option value="$PROJECT_DIR$/src/CollisionObj.java" />
+        <option value="$PROJECT_DIR$/src/Projectile.java" />
+        <option value="$PROJECT_DIR$/src/Level/AbstractPhysicsObj.java" />
+        <option value="$PROJECT_DIR$/src/Level/Portal.java" />
+        <option value="$PROJECT_DIR$/src/Level/CollisionObj/Portal.java" />
+        <option value="$PROJECT_DIR$/src/Portal.java" />
+        <option value="$PROJECT_DIR$/src/MovementType.java" />
+        <option value="$PROJECT_DIR$/src/PhysicsObj.java" />
+        <option value="$PROJECT_DIR$/src/Cube.java" />
+        <option value="$PROJECT_DIR$/src/Player.java" />
+        <option value="$PROJECT_DIR$/src/Wall.java" />
+        <option value="$PROJECT_DIR$/src/Menu.java" />
+        <option value="$PROJECT_DIR$/test/Portal2DTest.java" />
+        <option value="$PROJECT_DIR$/test/MenuTest.java" />
+        <option value="$PROJECT_DIR$/test/LevelTest.java" />
+        <option value="$PROJECT_DIR$/src/Level.java" />
+        <option value="$PROJECT_DIR$/src/Portal2D.java" />
+        <option value="$PROJECT_DIR$/src/AbstractPhysicsObj.java" />
+        <option value="$PROJECT_DIR$/README.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-18" />
+    <option name="y" value="-18" />
+    <option name="width" value="3150" />
+    <option name="height" value="1512" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Portal2D" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Portal2D" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538192303075" />
+    <property name="last_opened_file_path" value="C:/Program Files/processing-2.2.1/core/library/core.jar!/" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Portal2D">
+    <configuration name="Portal2D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Portal2D" />
+      <module name="Portal2D" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LevelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Portal2D" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LevelTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LevelTest.testIndexOfWall1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Portal2D" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LevelTest" />
+      <option name="METHOD_NAME" value="testIndexOfWall1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LevelTest.testInvalidLevelNum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Portal2D" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LevelTest" />
+      <option name="METHOD_NAME" value="testInvalidLevelNum" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LevelTest.testInvalidLevelNum4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Portal2D" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LevelTest" />
+      <option name="METHOD_NAME" value="testInvalidLevelNum4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Portal2D" />
+      <item itemvalue="JUnit.LevelTest.testInvalidLevelNum" />
+      <item itemvalue="JUnit.LevelTest.testInvalidLevelNum4" />
+      <item itemvalue="JUnit.LevelTest" />
+      <item itemvalue="JUnit.LevelTest.testIndexOfWall1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Portal2D" />
+        <item itemvalue="JUnit.LevelTest" />
+        <item itemvalue="JUnit.LevelTest.testIndexOfWall1" />
+        <item itemvalue="JUnit.LevelTest.testInvalidLevelNum4" />
+        <item itemvalue="JUnit.LevelTest.testInvalidLevelNum" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="false" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b57b68f-b52c-4ba1-a3b2-2dfe8bb03757" name="Default Changelist" comment="" />
+      <created>1537493774594</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537493774594</updated>
+      <workItem from="1537493785308" duration="80000" />
+      <workItem from="1537493974584" duration="624000" />
+      <workItem from="1537494632357" duration="9642000" />
+      <workItem from="1537504938976" duration="50382000" />
+      <workItem from="1537589884771" duration="82545000" />
+      <workItem from="1537742852935" duration="11714000" />
+      <workItem from="1537756107216" duration="2709000" />
+      <workItem from="1537849004651" duration="81000" />
+      <workItem from="1537981991943" duration="16000" />
+      <workItem from="1537982079104" duration="20000" />
+      <workItem from="1538170917838" duration="10925000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="LevelTest - 2018.09.28 at 22h 44m 50s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 22h 45m 13s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 22h 46m 15s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 22h 57m 20s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 01m 55s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 03m 33s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 05m 02s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 08m 14s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 08m 36s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LevelTest - 2018.09.28 at 23h 08m 48s.xml">
+      <configuration name="LevelTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="168738000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1435" height="772" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4965197" visible="true" weight="0.14285715" />
+      <window_info id="Structure" order="1" sideWeight="0.50348026" side_tool="true" weight="0.17186368" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5011601" side_tool="true" weight="0.26033357" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4981871" weight="0.32866043" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49963742" weight="0.39719626" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003626" side_tool="true" weight="0.32866043" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49166062" weight="0.32866043" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.5003626" side_tool="true" visible="true" weight="0.39719626" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4965197" visible="true" weight="0.14285715" />
+      <window_info id="Structure" order="1" sideWeight="0.50348026" side_tool="true" weight="0.17186368" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.5011601" side_tool="true" weight="0.26033357" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4981871" weight="0.32866043" />
+      <window_info anchor="bottom" id="Debug" order="2" sideWeight="0.49963742" weight="0.39719626" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" />
+      <window_info anchor="bottom" id="Database Changes" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003626" side_tool="true" weight="0.32866043" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49166062" weight="0.32866043" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.5003626" side_tool="true" visible="true" weight="0.39719626" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/DummyWall.java" />
+    <entry file="file://$PROJECT_DIR$/src/ImageCatalog.java" />
+    <entry file="jar://C:/Program Files/processing-2.2.1/core/library/core.jar!/processing/core/PGraphicsJava2D.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="133" column="18" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/processing-2.2.1/core/library/core.jar!/processing/core/PImage.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-932">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/processing-2.2.1/core/library/core.jar!/processing/core/PGraphics.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="1622" column="38" lean-forward="true" selection-start-line="1622" selection-start-column="38" selection-end-line="1622" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/processing-2.2.1/core/library/core.jar!/processing/core/PConstants.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2180">
+          <caret line="139" column="6" selection-start-line="139" selection-start-column="6" selection-end-line="139" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BlueProjectile.java" />
+    <entry file="file://$PROJECT_DIR$/src/BluePortal.java" />
+    <entry file="file://$PROJECT_DIR$/src/AbstractProjectile.java" />
+    <entry file="file://$PROJECT_DIR$/src/OrangeProjectile.java" />
+    <entry file="file://$PROJECT_DIR$/src/OrangePortal.java" />
+    <entry file="file://$PROJECT_DIR$/src/AbstractPortal.java" />
+    <entry file="file://$PROJECT_DIR$/src/Projectile1.java" />
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="450.0" y="1782.0">com</node>
+            <node x="1229.0" y="1708.0">netscape</node>
+            <node x="430.12499999999994" y="0.0">CollisionObj</node>
+            <node x="692.625" y="411.0">Wall</node>
+            <node x="596.0" y="1782.0">icon</node>
+            <node x="1608.0" y="1193.0">PortalColor</node>
+            <node x="886.0" y="1782.0">sun</node>
+            <node x="1433.0" y="1193.0">MovementType</node>
+            <node x="461.0" y="1708.0">groovyjarjarasm</node>
+            <node x="741.0" y="1782.0">java</node>
+            <node x="597.625" y="144.5">AbstractCollisionObj</node>
+            <node x="305.0" y="1193.0">Portal2D</node>
+            <node x="153.0" y="1782.0">javax</node>
+            <node x="891.0" y="1193.0">PortalOrientation</node>
+            <node x="543.0" y="1193.0">Portal</node>
+            <node x="0.0" y="1782.0">javafx</node>
+            <node x="505.62499999999994" y="488.0">FloorButton</node>
+            <node x="248.65277777777771" y="400.0">AbstractPhysicsObj</node>
+            <node x="128.40277777777771" y="101.0">PhysicsObj</node>
+            <node x="303.0" y="1782.0">junit</node>
+            <node x="369.99999999999994" y="722.0">Player</node>
+            <node x="1559.0" y="1708.0">oracle</node>
+            <node x="1075.0" y="1193.0">AbstractButton</node>
+            <node x="1027.0" y="1782.0">org</node>
+            <node x="1246.0" y="1193.0">WallType</node>
+            <node x="1099.625" y="477.0">PedestalButton</node>
+            <node x="0.0" y="1193.0">Projectile</node>
+            <node x="1052.0" y="1708.0">META-INF</node>
+            <node x="1168.0" y="1782.0">jdk</node>
+            <node x="1399.0" y="1708.0">groovy</node>
+            <node x="0.0" y="865.0">Cube</node>
+            <node x="872.0" y="1708.0">processing</node>
+            <node x="0.0" y="1708.0">groovyjarjarcommonscli</node>
+            <node x="1311.625" y="0.0">Level</node>
+            <node x="250.0" y="1708.0">groovyjarjarantlr</node>
+            <node x="669.0" y="1708.0">japplemenubar</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="AbstractPhysicsObj" target="AbstractCollisionObj">
+              <point x="54.75" y="-136.0" />
+              <point x="412.9027777777777" y="370.0" />
+              <point x="632.625" y="370.0" />
+              <point x="-105.0" y="81.0" />
+            </edge>
+            <edge source="Wall" target="AbstractCollisionObj">
+              <point x="0.0" y="-125.0" />
+              <point x="886.125" y="380.0" />
+              <point x="772.625" y="380.0" />
+              <point x="35.0" y="81.0" />
+            </edge>
+            <edge source="FloorButton" target="AbstractCollisionObj">
+              <point x="0.0" y="-48.0" />
+              <point x="589.125" y="380.0" />
+              <point x="702.625" y="380.0" />
+              <point x="-35.0" y="81.0" />
+            </edge>
+            <edge source="PedestalButton" target="AbstractCollisionObj">
+              <point x="0.0" y="-59.0" />
+              <point x="1183.125" y="370.0" />
+              <point x="842.625" y="370.0" />
+              <point x="105.0" y="81.0" />
+            </edge>
+            <edge source="Cube" target="AbstractPhysicsObj">
+              <point x="0.0" y="-70.0" />
+              <point x="175.0" y="697.0" />
+              <point x="303.4027777777777" y="697.0" />
+              <point x="-54.75" y="136.0" />
+            </edge>
+            <edge source="PhysicsObj" target="CollisionObj">
+              <point x="0.0" y="-124.5" />
+              <point x="303.4027777777777" y="76.0" />
+              <point x="500.12499999999994" y="76.0" />
+              <point x="-70.0" y="25.5" />
+            </edge>
+            <edge source="AbstractCollisionObj" target="CollisionObj">
+              <point x="0.0" y="-81.0" />
+              <point x="737.625" y="76.0" />
+              <point x="640.125" y="76.0" />
+              <point x="70.0" y="25.5" />
+            </edge>
+            <edge source="Player" target="AbstractPhysicsObj">
+              <point x="0.0" y="-213.0" />
+              <point x="545.0" y="697.0" />
+              <point x="412.9027777777777" y="697.0" />
+              <point x="54.75" y="136.0" />
+            </edge>
+            <edge source="AbstractPhysicsObj" target="PhysicsObj">
+              <point x="-54.75" y="-136.0" />
+              <point x="0.0" y="124.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.6095890410958904" x="135.0" y="758.0" />
+          <SelectedNodes>
+            <node>com</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractButton.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Projectile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="method#fire#0;class#Projectile#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractPortalObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloorButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PortalColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PortalOrientation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WallType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PedestalButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Portal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+          <folding>
+            <element signature="method#Portal#0;class#Portal#0" />
+            <element signature="method#Portal#1;class#Portal#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MovementType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Portal2DTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-251">
+          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+          <folding>
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/MenuTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="11" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractCollisionObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CollisionObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="211" column="39" selection-start-line="211" selection-start-column="39" selection-end-line="211" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#exitPortal#0;class#Player#0" />
+            <element signature="method#fireProjectile#0;class#Player#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/processing-2.2.1/core/library/core.jar!/processing/core/PApplet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="655" selection-start-line="655" selection-end-line="655" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/LevelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1488">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#930#931#0" expanded="true" />
+            <element signature="e#1021#1022#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="e#1297#1298#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+            <element signature="e#1398#1399#0" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1617#1618#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+            <element signature="e#1812#1813#0" expanded="true" />
+            <element signature="e#1871#1872#0" expanded="true" />
+            <element signature="e#1975#1976#0" expanded="true" />
+            <element signature="e#2031#2032#0" expanded="true" />
+            <element signature="e#2117#2118#0" expanded="true" />
+            <element signature="e#2169#2170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Portal2D/CollisionObj.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Portal2D/FloorButton.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#1515#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PhysicsObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1491">
+          <caret line="71" column="33" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding>
+            <element signature="method#Wall#1;class#Wall#0" />
+            <element signature="method#roundProjectileToEdge#0;class#Wall#0" />
+            <element signature="method#hasPortalRoom#0;class#Wall#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AbstractPhysicsObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Portal2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2163">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Portal2D</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
