@@ -67,44 +67,6 @@ public class Player extends AbstractPhysicsObj {
   }
 
 
-  // ***TRY TO ABSTRACT THIS:
-  @Override
-  public void exitPortal(float inV, float crossV, PortalOrientation orientation, float portalX,
-                         float portalY) {
-    switch (orientation) {
-      case FROM_LEFT:
-        x = portalX - width - 10;
-        y = portalY - height / 2;
-        vx = -inV;
-        vy = crossV;
-        if (movingRight) {
-          movingRight = false;
-        }
-        break;
-      case FROM_RIGHT:
-        x = portalX + 10;
-        y = portalY - height / 2;
-        vx = inV;
-        vy = -crossV;
-        if (movingLeft) {
-          movingLeft = false;
-        }
-        break;
-      case FROM_TOP:
-        x = portalX - width / 2;
-        y = portalY - height - 10;
-        vx = -crossV;
-        vy = -inV;
-        break;
-      case FROM_BOTTOM:
-        x = portalX - width / 2;
-        y = portalY + 10;
-        vx = crossV;
-        vy = inV;
-        break;
-    }
-  }
-
   /**
    * Returns true if this Player is touching the exit door with the given size and coordinates
    * @param doorX the x coordinate of the exit door

@@ -15,4 +15,5 @@ Interact with objects such as cubes and pedestal buttons with Middle Mouse Butto
 Return to level select menu with 'Backspace' key.
 
 ~~~CHANGE LOG~~~
+9/30/18 - added level 5, abstracted exitPortal() method
 9/28/18 - first published version, fully functional with four playable levels

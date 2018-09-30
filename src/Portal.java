@@ -87,7 +87,7 @@ public class Portal extends AbstractPortalObj {
    */
   public void transport(PhysicsObj obj, Portal exit, float vx, float vy) {
     float inV = 0; // velocity directed into the portal
-    float crossV = 0; // velocity directed perpindicular to the portal
+    float crossV = 0; // velocity directed perpendicular to the portal
     switch (orientation) {
       case FROM_LEFT:
         inV = vx;
@@ -104,7 +104,6 @@ public class Portal extends AbstractPortalObj {
       case FROM_BOTTOM:
         inV = -vy;
         crossV = -vx;
-        break;
     }
 
     exit.receive(obj, inV, crossV);

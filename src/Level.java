@@ -75,6 +75,9 @@ public class Level {
       case 4:
         buildLevel4();
         break;
+      case 5:
+        buildLevel5();
+        break;
       default:
         throw new IllegalArgumentException("That level number does not exist.");
     }
@@ -122,7 +125,8 @@ public class Level {
     animate(player);
 
     // UPDATE WHETHER PLAYER IS GROUNDED OR FALLING:
-    if (wallBelowPlayer()) {
+    if (wallBelowPlayer() && (!player.hittingPortal(bluePortal) || !orangePortal.isOnscreen())
+            && (!player.hittingPortal(orangePortal) || !bluePortal.isOnscreen())) {
       player.setGrounded(true);
     } else {
       player.setGrounded(false);
@@ -166,10 +170,15 @@ public class Level {
    * Turns the level's toggle walls on or off depending on the state of their corresponding buttons
    */
   public void updateWalls() {
+    int i1;
+    int i2;
+    int i3;
+    int i4;
+    int i5;
     switch (levelNum) {
       case 4:
-        int i1 = indexOfWall("toggle wall 1");
-        int i2 = indexOfWall("toggle wall 2");
+        i1 = indexOfWall("toggle wall 1");
+        i2 = indexOfWall("toggle wall 2");
         // if pedestal button is active and its corresponding wall is on, turn it off:
         if (pButtons.get(0).isActive() && i1 != -1) {
           walls.remove(i1);
@@ -178,6 +187,7 @@ public class Level {
         else if (!pButtons.get(0).isActive() && i1 == -1) {
           walls.add(new Wall("toggle wall 1", 600, 380, 30, 190, WallType.TOGGLEABLE, p));
         }
+
         // if floor button is pressed and its corresponding wall is on, turn it off:
         if (fButtons.get(0).isPressed() && i2 != -1) {
           walls.remove(i2);
@@ -185,6 +195,57 @@ public class Level {
         // if floor button is unpressed and its corresponding wall is off, turn it on:
         else if (!fButtons.get(0).isPressed() && i2 == -1) {
           walls.add(new Wall("toggle wall 2", 720, 380, 30, 190, WallType.TOGGLEABLE, p));
+        }
+        break;
+      case 5:
+        i1 = indexOfWall("left toggle wall");
+        i2 = indexOfWall("middle toggle wall");
+        i3 = indexOfWall("right toggle wall");
+        i4 = indexOfWall("door access toggle wall");
+        i5 = indexOfWall("cube toggle wall");
+        // if left floor button is pressed and its corresponding wall is on, turn it off:
+        if (fButtons.get(0).isPressed() && i1 != -1) {
+          walls.remove(i1);
+        }
+        // if left floor button is unpressed and its corresponding wall is off, turn it on:
+        else if (!fButtons.get(0).isPressed() && i1 == -1) {
+          walls.add(new Wall("left toggle wall", 130, 30, 30, 120, WallType.TOGGLEABLE, p));
+        }
+
+        // if middle floor button is pressed and its corresponding wall is on, turn it off:
+        if (fButtons.get(1).isPressed() && i2 != -1) {
+          walls.remove(i2);
+        }
+        // if middle floor button is unpressed and its corresponding wall is off, turn it on:
+        else if (!fButtons.get(1).isPressed() && i2 == -1) {
+          walls.add(new Wall("middle toggle wall", 260, 30, 30, 120, WallType.TOGGLEABLE, p));
+        }
+
+        // if right floor button is pressed and its corresponding wall is on, turn it off:
+        if (fButtons.get(2).isPressed() && i3 != -1) {
+          walls.remove(i3);
+        }
+        // if right floor button is unpressed and its corresponding wall is off, turn it on:
+        else if (!fButtons.get(2).isPressed() && i3 == -1) {
+          walls.add(new Wall("right toggle wall", 390, 30, 30, 120, WallType.TOGGLEABLE, p));
+        }
+
+        // if left pedestal button is active and its corresponding wall is off, turn it on:
+        if (pButtons.get(0).isActive() && i4 == -1) {
+          walls.add(new Wall("door access toggle wall", 300, 480, 30, 89, WallType.TOGGLEABLE, p));
+        }
+        // if left pedestal button is inactive and its corresponding wall is on, turn it off:
+        else if (!pButtons.get(0).isActive() && i4 != -1) {
+          walls.remove(i4);
+        }
+
+        // if right pedestal button is active and its corresponding wall is on, turn it off:
+        if (pButtons.get(1).isActive() && i5 != -1) {
+          walls.remove(i5);
+        }
+        // if left pedestal button is inactive and its corresponding wall is off, turn it on:
+        else if (!pButtons.get(1).isActive() && i5 == -1) {
+          walls.add(new Wall("cube toggle wall", 620, 350, 349, 30, WallType.TOGGLEABLE, p));
         }
     }
   }
@@ -216,6 +277,7 @@ public class Level {
     }
 
     // DOOR:
+    p.stroke(0);
     p.image(doorSprite, doorX, doorY, doorSize, doorSize);
 
     // FLOOR BUTTONS:
@@ -332,6 +394,9 @@ public class Level {
       case 4:
         p.rect(helpX, helpY - 70, 270, 100);
         break;
+      case 5:
+        p.rect(helpX, helpY - 70, 250, 90);
+        break;
       default:
         throw new RuntimeException("invalid level number");
     }
@@ -364,7 +429,12 @@ public class Level {
                         "Floor buttons must be held down to retain their effect.",
                 helpX, helpY - 70, 260, 100);
         break;
-
+      case 5:
+        // ideally divide this level into four different question marks
+        // (tips for cubes, floor buttons, pedestal buttons, and blue walls)
+        p.text("If you are stuck on a level, press 'Backspace' to return to the main menu.",
+                helpX, helpY - 70, 260, 100);
+        break;
       default:
         throw new RuntimeException("invalid level number");
     }
@@ -506,7 +576,7 @@ public class Level {
   }
 
   /**
-   * Returns the number of this level
+   * Returns the number of this Level
    *
    * @return the level number
    */
@@ -515,7 +585,7 @@ public class Level {
   }
 
   /**
-   * Builds this level according to level 1's design, by creating all of its walls, buttons, and
+   * Builds this Level according to level 1's design, by creating all of its walls, buttons, and
    * cubes, and setting the player's start position as well as the positions of the exit door and
    * help node
    */
@@ -541,7 +611,7 @@ public class Level {
   }
 
   /**
-   * Builds this level according to level 2's design, by creating all of its walls, buttons, and
+   * Builds this Level according to level 2's design, by creating all of its walls, buttons, and
    * cubes, and setting the player's start position as well as the positions of the exit door and
    * help node
    */
@@ -572,7 +642,7 @@ public class Level {
   }
 
   /**
-   * Builds this level according to level 3's design, by creating all of its walls, buttons, and
+   * Builds this Level according to level 3's design, by creating all of its walls, buttons, and
    * cubes, and setting the player's start position as well as the positions of the exit door and
    * help node
    */
@@ -602,7 +672,7 @@ public class Level {
   }
 
   /**
-   * Builds this level according to level 4's design, by creating all of its walls, buttons, and
+   * Builds this Level according to level 4's design, by creating all of its walls, buttons, and
    * cubes, and setting the player's start position as well as the positions of the exit door and
    * help node
    */
@@ -632,6 +702,53 @@ public class Level {
     pButtons.add(new PedestalButton(560, 320, p));
     fButtons = new ArrayList<FloorButton>();
     fButtons.add(new FloorButton(600, 140, p));
+  }
+
+  /**
+   * Builds this Level according to level 5's design, by creating all of its walls, buttons, and
+   * cubes, and setting the player's start position as well as the positions of the exit door and
+   * help node
+   */
+  public void buildLevel5() {
+    startX = 797;
+    startY = 539;
+    doorX = 130;
+    doorY = 520;
+    helpX = 500;
+    helpY = 540;
+    walls = new ArrayList<Wall>();
+    walls.add(new Wall("left floor", 0, 570, 300, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("right floor", 300, 570, 700, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 1", 0, 0, 130, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 2", 130, 0, 30, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 3", 160, 0, 100, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 4", 260, 0, 30, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 5", 290, 0, 100, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 6", 390, 0, 30, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left ceiling segment 7", 420, 0, 80, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("right ceiling", 500, 0, 500, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("upper left wall", 0, 0, 30, 150, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("lower left wall", 0, 150, 30, 450, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("right wall", 970, 0, 30, 569, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("left toggle wall", 130, 30, 30, 120, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("middle toggle wall", 260, 30, 30, 120, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("right toggle wall", 390, 30, 30, 120, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("left platform", 0, 150, 420, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("right platform", 650, 260, 319, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("cube toggle wall", 620, 350, 349, 30, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("cube barricade", 620, 260, 30, 90, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("center platform", 490, 320, 70, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("door barricade", 270, 400, 30, 169, WallType.PORTAL_RESISTANT, p));
+    cubes = new ArrayList<Cube>();
+    cubes.add(new Cube(800, 324, p)); // right cube
+    cubes.add(new Cube(330, 124, p)); // left cube
+    pButtons = new ArrayList<PedestalButton>();
+    pButtons.add(new PedestalButton(80, 120, p)); // left pb
+    pButtons.add(new PedestalButton(210, 120, p)); // right pb
+    fButtons = new ArrayList<FloorButton>();
+    fButtons.add(new FloorButton(700, 250, p)); // left
+    fButtons.add(new FloorButton(800, 250, p)); // middle
+    fButtons.add(new FloorButton(900, 250, p)); // right
   }
 
 }

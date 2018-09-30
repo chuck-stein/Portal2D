@@ -20,9 +20,9 @@ public class PedestalButton extends AbstractCollisionObj {
     p = processing;
     this.x = x;
     this.y = y;
-    this.width = 10;
-    this.height = 30;
-    this.active = false;
+    width = 10;
+    height = 30;
+    active = false;
   }
 
   /**

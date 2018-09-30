@@ -36,37 +36,6 @@ public class Cube extends AbstractPhysicsObj {
     p.image(sprite, x, y, width, height);
   }
 
-  @Override
-  public void exitPortal(float inV, float crossV, PortalOrientation orientation, float portalX,
-                         float portalY) {
-    switch (orientation) {
-      case FROM_LEFT:
-        x = portalX - width - 10;
-        y = portalY - height / 2;
-        vx = -inV;
-        vy = crossV;
-        break;
-      case FROM_RIGHT:
-        x = portalX + 10;
-        y = portalY - height / 2;
-        vx = inV;
-        vy = -crossV;
-        break;
-      case FROM_TOP:
-        x = portalX - width / 2;
-        y = portalY - height - 10;
-        vx = -crossV;
-        vy = -inV;
-        break;
-      case FROM_BOTTOM:
-        x = portalX - width / 2;
-        y = portalY + 10;
-        vx = crossV;
-        vy = inV;
-        break;
-    }
-  }
-
   /**
    * Sets this Cube be at the given player coordinates if it is currently being held
    * @param playerX the x coordinate of the player holding the Cube
