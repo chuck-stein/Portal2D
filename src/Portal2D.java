@@ -48,8 +48,11 @@ public class Portal2D extends PApplet {
     background(background);
     if (inLevel) {
       currLevel.play();
-      if (currLevel.levelEnding()) {
-        endLevel();
+      if (currLevel.wonLevel()) {
+        endLevel(true);
+      }
+      if (currLevel.lostLevel()) {
+        endLevel(false);
       }
     } else {
       menu.display(levelsCompleted);
@@ -57,16 +60,20 @@ public class Portal2D extends PApplet {
   }
 
   /**
-   * Fades out the screen and marks the current level as completed when the player successfully
-   * completes it, then returns to title screen
+   * Fades out the screen and returns to title screen, incrementing levelsCompleted if the player
+   * beat the Level
+   *
+   * @param won whether or not the player beat the Level that is ending
    */
-  public void endLevel() {
-    currLevel.exitLevel();
+  public void endLevel(boolean won) {
+    if (won) {
+      currLevel.exitDoor();
+    }
     fill(0, fade);
     rect(0, 0, width, height);
     fade += 5;
     if (fade >= 255) {
-      if (currLevel.getLevelNum() == levelsCompleted + 1) {
+      if (currLevel.getLevelNum() == levelsCompleted + 1 && won) {
         levelsCompleted++;
       }
       inLevel = false;
@@ -79,8 +86,8 @@ public class Portal2D extends PApplet {
    * 'key'). A = move left, D = move right, W = jump, BACKSPACE = return to menu, L = cheat code to
    * unlock the next level
    */
-  public void keyPressed() { // change to switch statement?
-    if (!currLevel.levelEnding()) {
+  public void keyPressed() {
+    if (!currLevel.wonLevel()) {
       if (key == 'A' || key == 'a') {
         currLevel.movePlayer(MovementType.LEFT);
       }
@@ -98,7 +105,7 @@ public class Portal2D extends PApplet {
       inLevel = false;
     }
     //DEV TOOL/CHEAT CODE:
-    if (key == 'L' || key == 'l') {
+    if (levelsCompleted < 12 && (key == 'L' || key == 'l')) {
       levelsCompleted++;
     }
   }
@@ -130,104 +137,13 @@ public class Portal2D extends PApplet {
         currLevel.actionButton();
       }
     } else if (menu.buttonNumClicked(levelsCompleted) > 0) {
-      currLevel = new Level(menu.buttonNumClicked(levelsCompleted), this);
-      inLevel = true;
+      try {
+        currLevel = new Level(menu.buttonNumClicked(levelsCompleted), this);
+        inLevel = true;
+      } catch (IllegalArgumentException e) {
+        println("That level has not been made yet!");
+      }
     }
   }
-
-//  /**
-//   * Displays the level select menu
-//   */
-//  public void drawMenu() {
-//    textSize(50);
-//    fill(0);
-//    text("LEVEL SELECT", width / 2, height / 9);
-//    drawButtons();
-//  }
-//
-//  /**
-//   * Displays the level buttons for the level select menu
-//   */
-//  public void drawButtons() {
-//    stroke(0);
-//    for (int i = 0; i < 18; i++) {
-//      if (i < 6) {
-//        fillLevelBox(i);
-//        rect(width / 6 * i + width / 28, height / 12 * 3, 100, 100);
-//        fill(255);
-//        text(i + 1, width / 6 * i + width / 28 + 50, height / 12 * 3 + 50);
-//      } else if (i < 12) {
-//        fillLevelBox(i);
-//        rect(width / 6 * (i - 6) + width / 28, height / 12 * 6, 100, 100);
-//        fill(255);
-//        text(i + 1, width / 6 * (i - 6) + width / 28 + 50, height / 12 * 6 + 50);
-//      } else if (i < 18) {
-//        fillLevelBox(i);
-//        rect(width / 6 * (i - 12) + width / 28, height / 12 * 9, 100, 100);
-//        fill(255);
-//        text(i + 1, width / 6 * (i - 12) + width / 28 + 50, height / 12 * 9 + 50);
-//      }
-//    }
-//  }
-//
-//  /**
-//   * Determines the fill color for a level button:
-//   * blue = unlocked but not beaten,
-//   * orange = unlocked and beaten,
-//   * black = locked
-//   *
-//   * @param levelNum the level number of the box to be filled
-//   */
-//  public void fillLevelBox(int levelNum) {
-//    if (levelsCompleted > levelNum) {
-//      fill(255, 153, 0);
-//    } else if (levelsCompleted == levelNum) {
-//      fill(0, 204, 255);
-//    } else {
-//      fill(0);
-//    }
-//  }
-//
-//  /**
-//   * If the mouse is on a level button, then enters the corresponding level
-//   */
-//  public void chooseLevel() {
-//    for (int i = 0; i < 18; i++) {
-//      // first row of buttons:
-//      if ((i < 6 && mouseX > width / 6 * i + width / 28
-//              && mouseX < width / 6 * i + width / 28 + 100 && mouseY > height / 12 * 3
-//              && mouseY < height / 12 * 3 + 100 && levelsCompleted >= i)
-//              // second row of buttons:
-//              || (i < 12 && mouseX > width / 6 * (i - 6) + width / 28
-//              && mouseX < width / 6 * (i - 6) + width / 28 + 100
-//              && mouseY > height / 12 * 6 && mouseY < height / 12 * 6 + 100
-//              && levelsCompleted >= i)
-//              // third row of buttons:
-//              || (i < 18 && mouseX > width / 6 * (i - 12) + width / 28
-//              && mouseX < width / 6 * (i - 12) + width / 28 + 100 && mouseY > height / 12 * 9
-//              && mouseY < height / 12 * 9 + 100 && levelsCompleted >= i)) {
-//        currLevel = new Level(i + 1, this);
-//        inLevel = true;
-//      }
-//    }
-//  }
-//
-//  /**
-//   * Fades out the screen and marks the current level as completed when the player successfully
-//   * completes it, then returns to title screen
-//   */
-//  public void endLevel() {
-//    currLevel.exitLevel();
-//    fill(0, fade);
-//    rect(0, 0, width, height);
-//    fade += 5;
-//    if (fade >= 255) {
-//      if (currLevel.getLevelNum() == levelsCompleted+1) {
-//        levelsCompleted++;
-//      }
-//      inLevel = false;
-//      fade = 0;
-//    }
-//  }
 
 }

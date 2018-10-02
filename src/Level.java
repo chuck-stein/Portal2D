@@ -78,6 +78,9 @@ public class Level {
       case 5:
         buildLevel5();
         break;
+      case 6:
+        buildLevel6();
+        break;
       default:
         throw new IllegalArgumentException("That level number does not exist.");
     }
@@ -179,6 +182,7 @@ public class Level {
       case 4:
         i1 = indexOfWall("toggle wall 1");
         i2 = indexOfWall("toggle wall 2");
+
         // if pedestal button is active and its corresponding wall is on, turn it off:
         if (pButtons.get(0).isActive() && i1 != -1) {
           walls.remove(i1);
@@ -203,6 +207,7 @@ public class Level {
         i3 = indexOfWall("right toggle wall");
         i4 = indexOfWall("door access toggle wall");
         i5 = indexOfWall("cube toggle wall");
+
         // if left floor button is pressed and its corresponding wall is on, turn it off:
         if (fButtons.get(0).isPressed() && i1 != -1) {
           walls.remove(i1);
@@ -247,6 +252,29 @@ public class Level {
         else if (!pButtons.get(1).isActive() && i5 == -1) {
           walls.add(new Wall("cube toggle wall", 620, 350, 349, 30, WallType.TOGGLEABLE, p));
         }
+        break;
+      case 6:
+        i1 = indexOfWall("left toggle wall");
+        i2 = indexOfWall("right toggle wall");
+
+        // if floor button is pressed and its corresponding wall is on, turn it off:
+        if (fButtons.get(0).isPressed() && i1 != -1) {
+          walls.remove(i1);
+        }
+        // if floor button is unpressed and its corresponding wall is off, turn it on:
+        else if (!fButtons.get(0).isPressed() && i1 == -1) {
+          walls.add(new Wall("left toggle wall", 120, 431, 30, 138, WallType.TOGGLEABLE, p));
+        }
+
+        // if pedestal button is active and its corresponding wall is on, turn it off:
+        if (pButtons.get(0).isActive() && i2 != -1) {
+          walls.remove(i2);
+        }
+        // if pedestal button is inactive and its corresponding wall is off, turn it on:
+        else if (!pButtons.get(0).isActive() && i2 == -1) {
+          walls.add(new Wall("right toggle wall", 850, 31, 30, 118, WallType.TOGGLEABLE, p));
+        }
+
     }
   }
 
@@ -397,8 +425,8 @@ public class Level {
       case 5:
         p.rect(helpX, helpY - 70, 250, 90);
         break;
-      default:
-        throw new RuntimeException("invalid level number");
+      case 6:
+        p.rect(helpX, helpY - 100, 270, 120);
     }
 
     // DISPLAY HELP TEXT:
@@ -417,7 +445,7 @@ public class Level {
                 helpX, helpY - 70, 220, 100);
         break;
       case 3:
-        p.text("Your momentum and acceleration are retained through portals." +
+        p.text("Your momentum and acceleration are retained through portals. " +
                         "Use this to your advantage to launch yourself further and solve puzzles!",
                 helpX, helpY - 100, 250, 130);
         break;
@@ -425,18 +453,18 @@ public class Level {
       case 4:
         // ideally divide this level into four different question marks
         // (tips for cubes, floor buttons, pedestal buttons, and blue walls)
-        p.text("MMB to pickup/drop the cube, or to activate pedestal buttons." +
+        p.text("MMB or 'E' key to pickup/drop the cube, or to activate pedestal buttons." +
                         "Floor buttons must be held down to retain their effect.",
                 helpX, helpY - 70, 260, 100);
         break;
       case 5:
-        // ideally divide this level into four different question marks
-        // (tips for cubes, floor buttons, pedestal buttons, and blue walls)
         p.text("If you are stuck on a level, press 'Backspace' to return to the main menu.",
                 helpX, helpY - 70, 260, 100);
         break;
-      default:
-        throw new RuntimeException("invalid level number");
+      case 6:
+        p.text("Don't forget that sometimes you need to enter a portal with as much acceleration " +
+                        "as possible in order to really fly coming out the other end.",
+                helpX, helpY - 100, 250, 130);
     }
 
     //RESET RECTANGLE MODE:
@@ -456,18 +484,25 @@ public class Level {
       proj.move();
       if (projectileHitsWall(proj)) {
         proj.moveToWallEdge(markedWall);
-        if (proj.canMakePortal(markedWall, otherPortal)) {
-          if (portal.getColor() == PortalColor.BLUE) {
-            bluePortal = proj.createPortal(markedWall);
-            proj.cancelShot();
+        try {
+          if (proj.canMakePortal(markedWall, otherPortal)) {
+            if (portal.getColor() == PortalColor.BLUE) {
+              bluePortal = proj.createPortal(markedWall);
+              proj.cancelShot();
+            } else {
+              orangePortal = proj.createPortal(markedWall);
+              proj.cancelShot();
+            }
           } else {
-            orangePortal = proj.createPortal(markedWall);
             proj.cancelShot();
           }
-        } else {
+          break; // so that projectile does not keep moving this frame after hitting a wall
+        }
+        // if portal orientation cannot be determined (caused by a shot colliding with a Wall's
+        // corner pixel), cancel the shot:
+        catch (RuntimeException noOrientationFound){
           proj.cancelShot();
         }
-        break; // so that projectile does not keep moving this frame after hitting a wall
       }
     }
 
@@ -492,18 +527,26 @@ public class Level {
   }
 
   /**
-   * Returns true if the player is at the exit door
+   * Returns true if the Player is at the exit door
    *
-   * @return whether or not the player is at the exit door
+   * @return whether or not the Player is at the exit door
    */
-  public boolean levelEnding() {
+  public boolean wonLevel() {
     return player.leavingLevel(doorX, doorY, doorSize);
+  }
+
+  /**
+   * Returns true if the Player lost the Level
+   * @return whether or not the Player is falling out of the Level
+   */
+  public boolean lostLevel() {
+    return player.fallingOffLevel();
   }
 
   /**
    * Stops the player when they reach the exit door, and opens the door
    */
-  public void exitLevel() {
+  public void exitDoor() {
     p.fill(0);
     p.rect(doorX, doorY, doorSize, doorSize);
     player.resetVX();
@@ -751,4 +794,40 @@ public class Level {
     fButtons.add(new FloorButton(900, 250, p)); // right
   }
 
+  /**
+   * Builds this Level according to level 6's design, by creating all of its walls, buttons, and
+   * cubes, and setting the player's start position as well as the positions of the exit door and
+   * help node
+   */
+  public void buildLevel6() {
+    startX = 900;
+    startY = 369;
+    doorX = 50;
+    doorY = 520;
+    helpX = 700;
+    helpY = 530;
+    walls = new ArrayList<Wall>();
+    walls.add(new Wall("floor", 0, 570, 1000, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("ceiling", 0, 0, 1000, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("upper left wall", 0, 0, 30, 180, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("lower left wall", 0, 181, 30, 420, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("upper right wall", 970, 0, 30, 180, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("lower right wall", 970, 181, 30, 420, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("upper left platform", 30, 150, 120, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("upper right platform", 850, 150, 120, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("lower left platform", 30, 400, 120, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("lower right platform", 850, 400, 120, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left toggle wall", 120, 431, 30, 138, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("right toggle wall", 850, 31, 30, 118, WallType.TOGGLEABLE, p));
+    walls.add(new Wall("top center platform", 460, 100, 80, 30, WallType.PORTAL_RESISTANT, p));
+    walls.add(new Wall("bottom center platform", 460, 131, 80, 30, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("left stalactite", 300, 31, 30, 100, WallType.PORTAL_FRIENDLY, p));
+    walls.add(new Wall("right stalactite", 670, 31, 30, 100, WallType.PORTAL_FRIENDLY, p));
+    cubes = new ArrayList<Cube>();
+    cubes.add(new Cube(915, 124, p));
+    pButtons = new ArrayList<PedestalButton>();
+    pButtons.add(new PedestalButton(80, 120, p));
+    fButtons = new ArrayList<FloorButton>();
+    fButtons.add(new FloorButton(475, 90, p));
+  }
 }

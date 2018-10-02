@@ -2,7 +2,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 /**
- * The player in a Level of 2D Portal, which can move, teleport, and interact with buttons and cubes
+ * The player in a Level of 2D Portal, which can move, teleport, and interact with buttons and
+ * cubes
  */
 public class Player extends AbstractPhysicsObj {
 
@@ -18,8 +19,9 @@ public class Player extends AbstractPhysicsObj {
   /**
    * Constructs a new 30x30 grounded player with 0.8 friction and 0 velocity at the given
    * coordinates, which is not moving to the left, right, and uses the given Processing library
-   * @param x the x position of the Player
-   * @param y the y position of the Player
+   *
+   * @param x          the x position of the Player
+   * @param y          the y position of the Player
    * @param processing the Processing library
    */
   Player(float x, float y, PApplet processing) {
@@ -38,7 +40,6 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Draws this Player at its current position using the given sprite
-   * @param sprite
    */
   public void draw(PImage sprite) {
     p.image(sprite, x, y, width, height);
@@ -58,6 +59,7 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Returns true if this Player is touching the given coordinates of the help node
+   *
    * @param helpX the x coordinate of the help node
    * @param helpY the y coordinate of the help node
    * @return whether or not the Player is touching the help node
@@ -69,8 +71,9 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Returns true if this Player is touching the exit door with the given size and coordinates
-   * @param doorX the x coordinate of the exit door
-   * @param doorY the y coordinate of the exit door
+   *
+   * @param doorX    the x coordinate of the exit door
+   * @param doorY    the y coordinate of the exit door
    * @param doorSize the width and height of the exit door
    * @return whether or not the player is touching the exit door, and therefore leaving the level
    */
@@ -79,8 +82,18 @@ public class Player extends AbstractPhysicsObj {
   }
 
   /**
+   * Returns true if this Player is falling off screen
+   *
+   * @return whether or not this Player's y-position is greater than the height of the game window
+   */
+  public boolean fallingOffLevel() {
+    return y > p.height;
+  }
+
+  /**
    * Puts the given Projectile on screen at the center of the Player sprite, moving toward where the
    * user clicked
+   *
    * @param proj the Projectile to be fired
    */
   public void fireProjectile(Projectile proj) {
@@ -91,6 +104,7 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Returns true if this Player is touching the given Cube
+   *
    * @param c the Cube to be checked for collision
    * @return whether or not the Player is touching the Cube
    */
@@ -100,6 +114,7 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Sets the given Cube's position to this Player's position if they are holding it
+   *
    * @param c the Cube to be moved with the Player
    */
   public void moveCube(Cube c) {
@@ -107,8 +122,9 @@ public class Player extends AbstractPhysicsObj {
   }
 
   /**
-   * Lets go of the given Cube with the Player's velocities if it is being held, or picks it up
-   * if it is not being held
+   * Lets go of the given Cube with the Player's velocities if it is being held, or picks it up if
+   * it is not being held
+   *
    * @param c the Cube to be picked up or dropped
    */
   public void cubeInteraction(Cube c) {
@@ -117,6 +133,7 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Returns true if this Player is touching the given PedestalButton
+   *
    * @param b the PedestalButton to be checked for collision
    * @return wheher or not the Player is touching the PedestalButton
    */
@@ -163,15 +180,17 @@ public class Player extends AbstractPhysicsObj {
 
   /**
    * Returns true if the given Wall is a pixel below this Player
+   *
    * @param w the Wall being checked for this Player above it
    * @return true if the given Wall would be colliding with this Player if they were a pixel lower
    */
   public boolean standingOnWall(Wall w) {
-    return w.touchingObj(x, y+1, width, height);
+    return w.touchingObj(x, y + 1, width, height);
   }
 
   /**
    * Sets this Player's grounded status to the given boolean
+   *
    * @param grounded whether or not the player should be grounded
    */
   public void setGrounded(boolean grounded) {

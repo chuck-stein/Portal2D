@@ -101,8 +101,9 @@ public class Projectile extends AbstractPortalObj {
    *
    * @param w the Wall on which the Portal will be created
    * @return the Portal that this Projectile creates
+   * @throws RuntimeException if the prospective Portal's orientation could not be determined
    */
-  public Portal createPortal(Wall w) {
+  public Portal createPortal(Wall w) throws RuntimeException {
     PortalOrientation orientation = w.findPortalOrientation((int)x, (int)y);
     return new Portal(color, x, y, orientation, w, p);
   }
@@ -125,25 +126,15 @@ public class Projectile extends AbstractPortalObj {
    * @param w           the Wall on which this Projectile would make a Portal if it can
    * @param otherPortal the Portal of opposite color to this Projectile
    * @return whether or not this Projectile can make a Portal on the given Wall
+   * @throws RuntimeException if the prospective Portal's orientation could not be determined
    */
-  public boolean canMakePortal(Wall w, Portal otherPortal) {
+  public boolean canMakePortal(Wall w, Portal otherPortal) throws RuntimeException {
     if (!w.isPortalFriendly()) {
       return false;
     }
     if (otherPortal.touchingObj(x, y, width, height)) {
       return false;
     }
-
-//    if (orientation == PortalOrientation.FROM_TOP || orientation == PortalOrientation.FROM_BOTTOM) {
-//      if (otherPortal.touchingObj(x-40, y-5, 80, 10)) {
-//        return false;
-//      }
-//    } else { // FROM_LEFT OR FROM_RIGHT
-//      if (otherPortal.touchingObj(x-5, y-40, 10, 80)) {
-//        return false;
-//      }
-//    }
-
     PortalOrientation orientation = w.findPortalOrientation((int)x, (int)y);
     return w.hasPortalRoom(orientation, x, y, this);
   }

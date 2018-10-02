@@ -18,7 +18,7 @@ public class Menu {
   public void display(int levelsCompleted) {
     p.textSize(50);
     p.fill(0);
-    p.text("LEVEL SELECT", p.width / 2, p.height / 9);
+    p.text("LEVEL SELECT", p.width / 2, p.height / 7);
     drawButtons(levelsCompleted);
   }
 
@@ -27,22 +27,17 @@ public class Menu {
    */
   public void drawButtons(int levelsCompleted) {
     p.stroke(0);
-    for (int i = 0; i < 18; i++) {
+    for (int i = 0; i < 12; i++) {
       if (i < 6) {
         fillLevelBox(i, levelsCompleted);
-        p.rect(p.width / 6 * i + p.width / 28, p.height / 12 * 3, 100, 100);
+        p.rect(p.width / 6 * i + p.width / 28, p.height / 12 * 4, 100, 100);
         p.fill(255);
-        p.text(i + 1, p.width / 6 * i + p.width / 28 + 50, p.height / 12 * 3 + 50);
+        p.text(i + 1, p.width / 6 * i + p.width / 28 + 50, p.height / 12 * 4 + 50);
       } else if (i < 12) {
         fillLevelBox(i, levelsCompleted);
-        p.rect(p.width / 6 * (i - 6) + p.width / 28, p.height / 12 * 6, 100, 100);
+        p.rect(p.width / 6 * (i - 6) + p.width / 28, p.height / 12 * 8, 100, 100);
         p.fill(255);
-        p.text(i + 1, p.width / 6 * (i - 6) + p.width / 28 + 50, p.height / 12 * 6 + 50);
-      } else if (i < 18) {
-        fillLevelBox(i, levelsCompleted);
-        p.rect(p.width / 6 * (i - 12) + p.width / 28, p.height / 12 * 9, 100, 100);
-        p.fill(255);
-        p.text(i + 1, p.width / 6 * (i - 12) + p.width / 28 + 50, p.height / 12 * 9 + 50);
+        p.text(i + 1, p.width / 6 * (i - 6) + p.width / 28 + 50, p.height / 12 * 8 + 50);
       }
     }
   }
@@ -76,17 +71,12 @@ public class Menu {
     for (int i = 0; i < 18; i++) {
       // first row of buttons:
       if ((i < 6 && p.mouseX > p.width / 6 * i + p.width / 28
-              && p.mouseX < p.width / 6 * i + p.width / 28 + 100 && p.mouseY > p.height / 12 * 3
-              && p.mouseY < p.height / 12 * 3 + 100 && levelsCompleted >= i)
+              && p.mouseX < p.width / 6 * i + p.width / 28 + 100 && p.mouseY > p.height / 12 * 4
+              && p.mouseY < p.height / 12 * 4 + 100 && levelsCompleted >= i)
               // second row of buttons:
               || (i < 12 && p.mouseX > p.width / 6 * (i - 6) + p.width / 28
               && p.mouseX < p.width / 6 * (i - 6) + p.width / 28 + 100
-              && p.mouseY > p.height / 12 * 6 && p.mouseY < p.height / 12 * 6 + 100
-              && levelsCompleted >= i)
-              // third row of buttons:
-              || (i < 18 && p.mouseX > p.width / 6 * (i - 12) + p.width / 28
-              && p.mouseX < p.width / 6 * (i - 12) + p.width / 28 + 100
-              && p.mouseY > p.height / 12 * 9 && p.mouseY < p.height / 12 * 9 + 100
+              && p.mouseY > p.height / 12 * 8 && p.mouseY < p.height / 12 * 8 + 100
               && levelsCompleted >= i)) {
         return i + 1;
       }
